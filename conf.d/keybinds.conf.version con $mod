@@ -3,45 +3,36 @@
 # ==================================================
 # APLICACIONES
 # ==================================================
-bindsym Mod1+Return exec foot
-bindsym Mod1+e exec thunar
-bindsym Mod1+b exec sh -c 'gtk-launch "$(xdg-settings get default-web-browser)"'
-
-bindsym Mod1+Control+e exec kitty -e yazi
-bindsym Mod1+Control+v exec kitty -e nvim
-bindsym Mod1+Control+m exec kitty -e rmpc
-
+bindsym $mod+Return exec foot
+bindsym $mod+e exec thunar
+bindsym $mod+b exec sh -c 'gtk-launch "$(xdg-settings get default-web-browser)"'
 
 # ==================================================
 # LAUNCHERS / MENÚS (NOCTALIA)
 # ==================================================
 
 # Launcher principal (reemplazo de rofi)
-bindsym Mod1+space exec qs -c noctalia-shell ipc call launcher toggle
+bindsym $mod+space exec qs -c noctalia-shell ipc call launcher toggle
 
 # Control Center
-bindsym Mod1+s exec qs -c noctalia-shell ipc call controlCenter toggle
-bindsym Mod1+n exec qs -c noctalia-shell ipc call controlCenter toggle
+bindsym $mod+s exec qs -c noctalia-shell ipc call controlCenter toggle
+bindsym $mod+n exec qs -c noctalia-shell ipc call controlCenter toggle
 
 # Settings
-#bindsym Mod1+t exec qs -c noctalia-shell ipc call settings toggle
+#bindsym $mod+t exec qs -c noctalia-shell ipc call settings toggle
 
 # Session / Power menu
-bindsym Control+Mod1+delete exec qs -c noctalia-shell ipc call sessionMenu toggle
+bindsym Control+$mod+delete exec qs -c noctalia-shell ipc call sessionMenu toggle
 
 # Wallpaper selector
-bindsym Mod1+p exec qs -c noctalia-shell ipc call wallpaper toggle
+bindsym $mod+p exec qs -c noctalia-shell ipc call wallpaper toggle
 
 # Bar toggle
-bindsym Mod1+Control+b exec qs -c noctalia-shell ipc call bar toggle
+bindsym $mod+Control+b exec qs -c noctalia-shell ipc call bar toggle
+
 
 # Settings
-bindsym Mod1+comma exec qs -c noctalia-shell ipc call settings toggle
-
-
-
-# --- Control de Volumen (Noctalia Shell) ---
-# Usamos --locked para que funcione en la pantalla de bloqueo
+bindsym $mod+comma exec qs -c noctalia-shell ipc call settings toggle
 bindsym --locked XF86AudioRaiseVolume exec qs -c noctalia-shell ipc call volume increase
 bindsym --locked XF86AudioLowerVolume exec qs -c noctalia-shell ipc call volume decrease
 bindsym --locked XF86AudioMute       exec qs -c noctalia-shell ipc call volume muteOutput
@@ -57,16 +48,16 @@ bindsym --locked XF86AudioStop exec qs -c noctalia-shell ipc call media pause
 # ==================================================
 # GESTIÓN DE VENTANAS
 # ==================================================
-bindsym Mod1+q kill
+bindsym $mod+q kill
 floating_modifier $mod normal
 
-bindsym Mod1+d layout toggle tabbed split
-bindsym Mod1+f fullscreen toggle
+bindsym $mod+d layout toggle tabbed split
+bindsym $mod+f fullscreen toggle
 
-bindsym Mod1+Control+space floating toggle
+bindsym $mod+Control+space floating toggle
 
-bindsym Mod1+Tab focus mode_toggle
-bindsym Mod1+a focus parent
+bindsym $mod+Tab focus mode_toggle
+bindsym $mod+a focus parent
 
 
 # ==================================================
@@ -74,51 +65,51 @@ bindsym Mod1+a focus parent
 # ==================================================
 
 # Direcciones (vim + flechas)
-bindsym Mod1+$left focus left
-bindsym Mod1+$down focus down
-bindsym Mod1+$up focus up
-bindsym Mod1+$right focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
-bindsym Mod1+Left focus left
-bindsym Mod1+Down focus down
-bindsym Mod1+Up focus up
-bindsym Mod1+Right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 
 # ==================================================
 # MOVER VENTANAS
 # ==================================================
-bindsym Mod1+Shift+$left move left
-bindsym Mod1+Shift+$down move down
-bindsym Mod1+Shift+$up move up
-bindsym Mod1+Shift+$right move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
-bindsym Mod1+Shift+Left move left
-bindsym Mod1+Shift+Down move down
-bindsym Mod1+Shift+Up move up
-bindsym Mod1+Shift+Right move right 
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right 
 
 # ==================================================
 # WORKSPACES
 # ==================================================
-bindsym Mod1+Control+Left workspace prev
-bindsym Mod1+Control+Right workspace next
+bindsym $mod+Shift+Left workspace prev
+bindsym $mod+Shift+Right workspace next
 
 
 # ==================================================
 # LAYOUTS
 # ==================================================
-bindsym Mod1+w splith
-bindsym Mod1+v splitv
-bindsym Mod1+t layout tabbed
-bindsym Mod1+x layout toggle split
+bindsym $mod+w splith
+bindsym $mod+v splitv
+bindsym $mod+t layout tabbed
+bindsym $mod+x layout toggle split
 
 
 # ==================================================
 # SCRATCHPAD
 # ==================================================
-bindsym Mod1+Shift+minus move scratchpad
-bindsym Mod1+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
 
 
 # ==================================================
@@ -138,11 +129,11 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym Mod1+r mode "resize"
+bindsym $mod+r mode "resize"
 
 
 # ==================================================
 # SISTEMA
 # ==================================================
-bindsym Mod1+c reload
-bindsym Mod1+Control+s exec ~/.config/sway/scripts/screenshot-area.sh
+bindsym $mod+Shift+c reload
+bindsym $mod+Control+s exec ~/.config/sway/scripts/screenshot-area.sh
